@@ -1,0 +1,1086 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`API - Gestor Web | ${SITE_TITLE}`} description="Sistema de gestión integral con Laravel 12 + Vue.js 3 para administración de personas, ciudades y localidades en Venezuela" />
+	</head>
+	<body>
+		<Header />
+		<main class="api">
+			<a href="/projects" class="back-link">← Volver a Proyectos</a>
+
+			<section class="hero">
+				<div class="hero-badge">Proyecto Destacado</div>
+				<h1>API - Gestor Web</h1>
+				<p class="hero-subtitle">Sistema de Gestión Integral</p>
+				<p class="hero-desc">
+					Sistema de gestión integral desarrollado con Laravel 12, Vue.js 3 e Inertia.js,
+					orientado al registro y administración de personas, ciudades, localidades, oficinas
+					e integraciones con aplicaciones externas. Diseñado para un contexto venezolano.
+				</p>
+				<div class="hero-tags">
+					<span class="tag">Laravel 12</span>
+					<span class="tag">Vue.js 3</span>
+					<span class="tag">Inertia.js</span>
+					<span class="tag">Tailwind CSS</span>
+					<span class="tag">MySQL 8</span>
+					<span class="tag">Vite 6</span>
+					<span class="tag">Sanctum</span>
+				</div>
+			</section>
+
+			<section class="gallery-section">
+				<h2>Galería del Sistema</h2>
+				<div class="gallery-grid">
+					<a href="/images/api/login.png" class="gallery-item glightbox" data-gallery="api" data-description="Inicio de Sesión">
+						<img src="/images/api/login.png" alt="Inicio de Sesión" loading="lazy" />
+						<span>Inicio de Sesión</span>
+					</a>
+					<a href="/images/api/personas.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Personas">
+						<img src="/images/api/personas.png" alt="Gestión de Personas" loading="lazy" />
+						<span>Gestión de Personas</span>
+					</a>
+					<a href="/images/api/ciudades.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Ciudades">
+						<img src="/images/api/ciudades.png" alt="Gestión de Ciudades" loading="lazy" />
+						<span>Gestión de Ciudades</span>
+					</a>
+					<a href="/images/api/localidades.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Localidades">
+						<img src="/images/api/localidades.png" alt="Gestión de Localidades" loading="lazy" />
+						<span>Gestión de Localidades</span>
+					</a>
+					<a href="/images/api/oficinas.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Oficinas">
+						<img src="/images/api/oficinas.png" alt="Gestión de Oficinas" loading="lazy" />
+						<span>Gestión de Oficinas</span>
+					</a>
+					<a href="/images/api/exportar.png" class="gallery-item glightbox" data-gallery="api" data-description="Exportación de Datos">
+						<img src="/images/api/exportar.png" alt="Exportación de Datos" loading="lazy" />
+						<span>Exportación de Datos</span>
+					</a>
+					<a href="/images/api/aplicaciones.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Aplicaciones">
+						<img src="/images/api/aplicaciones.png" alt="Gestión de Aplicaciones" loading="lazy" />
+						<span>Gestión de Aplicaciones</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="stack-section">
+				<h2>Stack Tecnológico</h2>
+				<div class="stack-grid">
+					<div class="stack-item">
+						<span class="stack-layer">Backend</span>
+						<strong>PHP 8.2+ (Laravel 12.x)</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Frontend</span>
+						<strong>Vue.js 3.x + Inertia.js 2.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">CSS</span>
+						<strong>Tailwind CSS 3.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Build</span>
+						<strong>Vite 6.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Base de datos</span>
+						<strong>MySQL 8.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Autenticación</span>
+						<strong>Laravel Sanctum 4.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Roles/Permisos</span>
+						<strong>Spatie Permission 6.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Exportación</span>
+						<strong>Maatwebsite Excel 3.x</strong>
+					</div>
+				</div>
+			</section>
+
+			<section class="architecture-section">
+				<h2>Arquitectura del Sistema</h2>
+				<div class="arch-content">
+					<div class="arch-tree">
+						<h3>Relaciones de Modelos</h3>
+						<pre><code>ciudades (1) ──── (*) localidad
+                          │
+                  personas (FK: id_localidad)
+
+oficinas (independiente)
+
+users (muchos a muchos vía roles/permisos)
+
+aplicaciones (independiente — tokens externos)</code></pre>
+					</div>
+					<div class="arch-table">
+						<h3>Tablas Principales</h3>
+						<table>
+							<thead>
+								<tr><th>Tabla</th><th>Campos Clave</th><th>Descripción</th></tr>
+							</thead>
+							<tbody>
+								<tr><td><strong>ciudades</strong></td><td>id, nombre</td><td>Ciudades venezolanas</td></tr>
+								<tr><td><strong>localidad</strong></td><td>id, nombre, ciudad_id (FK)</td><td>Localidades/barrios por ciudad</td></tr>
+								<tr><td><strong>personas</strong></td><td>id, nombre, apellidos, dni, telefono, sexo, direccion, fecha_nacimiento, id_localidad</td><td>Registro de personas</td></tr>
+								<tr><td><strong>oficinas</strong></td><td>id, nombre</td><td>Oficinas corporativas</td></tr>
+								<tr><td><strong>users</strong></td><td>id, name, email, password</td><td>Usuarios del sistema</td></tr>
+								<tr><td><strong>aplicaciones</strong></td><td>id, nombre, permiso, token, estado</td><td>Aplicaciones externas</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section class="modules-section">
+				<h2>Módulos Funcionales</h2>
+
+				<div class="module-card">
+					<div class="module-num">01</div>
+					<div class="module-body">
+						<h3>Autenticación Dual</h3>
+						<div class="dual-form">
+							<div class="form-type">
+								<h4>Sesión (SPA Web)</h4>
+								<ul>
+									<li>Login con throttling (10 intentos/minuto)</li>
+									<li>Sesiones en base de datos (120 min)</li>
+									<li>Solo rol Admin accede al panel web</li>
+								</ul>
+							</div>
+							<div class="form-type">
+								<h4>Token (API Externa)</h4>
+								<ul>
+									<li>Bearer token para integraciones</li>
+									<li>Tokens SHA-256 hasheados</li>
+									<li>Expiración: 24 horas</li>
+									<li>Tokens mostrados solo una vez</li>
+								</ul>
+							</div>
+						</div>
+						<div class="module-routes">
+							<span class="route">POST /api/auth/login</span>
+							<span class="route">POST /api/auth/logout</span>
+							<span class="route">GET /api/auth/user</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">02</div>
+					<div class="module-body">
+						<h3>Sistema de Roles y Permisos</h3>
+						<p>2 roles con 10 permisos granulares:</p>
+						<div class="roles-grid">
+							<div class="role-card role-admin">
+								<h4>Admin</h4>
+								<p>Acceso total al sistema</p>
+								<span>CRUD completo de personas, gestión de usuarios, roles y API</span>
+							</div>
+							<div class="role-card role-user">
+								<h4>Usuario</h4>
+								<p>Acceso limitado</p>
+								<span>Lectura, creación, visualización y actualización (sin eliminación)</span>
+							</div>
+						</div>
+						<div class="module-routes">
+							<span class="route">personas.*</span>
+							<span class="route">ciudades.*</span>
+							<span class="route">localidades.*</span>
+							<span class="route">oficinas.*</span>
+							<span class="route">admin.users.*</span>
+							<span class="route">api.*</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">03</div>
+					<div class="module-body">
+						<h3>Gestión de Personas</h3>
+						<ul>
+							<li>CRUD completo (Crear, Leer, Actualizar, Eliminar)</li>
+							<li>Operaciones basadas en <strong>DNI</strong> en lugar de ID numérico</li>
+							<li>Búsqueda avanzada por múltiples campos</li>
+							<li>Búsqueda específica por número de teléfono</li>
+							<li>Validación de formularios con expresiones regulares</li>
+							<li>Paginación de 20 registros por página</li>
+						</ul>
+						<p class="module-detail"><strong>Campos:</strong> nombre, apellidos, DNI (único), teléfono, sexo (M/F), dirección, fecha de nacimiento, localidad</p>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">04</div>
+					<div class="module-body">
+						<h3>Gestión de Ciudades y Localidades</h3>
+						<ul>
+							<li>CRUD de ciudades con relación uno-a-muchos con localidades</li>
+							<li>CRUD de localidades asociadas a una ciudad</li>
+							<li>Eliminación en cascada: ciudad → localidades → personas</li>
+							<li>Datos sembrados: 15 ciudades venezolanas y ~65 localidades/barrios</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">05</div>
+					<div class="module-body">
+						<h3>Gestión de Oficinas</h3>
+						<ul>
+							<li>CRUD independiente de oficinas</li>
+							<li>10 oficinas corporativas pre-cargadas</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">06</div>
+					<div class="module-body">
+						<h3>Gestión de Usuarios</h3>
+						<ul>
+							<li>Administración de usuarios con paginación</li>
+							<li>Asignación de roles: Admin y Usuario</li>
+							<li>Cambio de contraseña y eliminación de usuarios</li>
+							<li>10 permisos granulares distribuidos entre los roles</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">07</div>
+					<div class="module-body">
+						<h3>Integración con Aplicaciones Externas</h3>
+						<ul>
+							<li>Gestión de aplicaciones registradas con tokens de acceso</li>
+							<li>Niveles de permiso por aplicación</li>
+							<li>Endpoints versionados (<code>/api/v1/</code>)</li>
+						</ul>
+						<div class="permission-levels">
+							<div class="perm-item perm-total">
+								<strong>total</strong>
+								<span>Acceso completo (lectura, escritura, eliminación)</span>
+							</div>
+							<div class="perm-item perm-write">
+								<strong>escritura</strong>
+								<span>Lectura y escritura (sin eliminación)</span>
+							</div>
+							<div class="perm-item perm-read">
+								<strong>lectura</strong>
+								<span>Solo lectura (GET/HEAD/OPTIONS)</span>
+							</div>
+							<div class="perm-item perm-none">
+								<strong>solo_usuario</strong>
+								<span>Sin acceso API</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">08</div>
+					<div class="module-body">
+						<h3>Exportación a Excel</h3>
+						<ul>
+							<li>Exportación de personas con filtros avanzados</li>
+							<li>Conteo de registros filtrados en tiempo real</li>
+							<li>Sugerencias de autocompletado para nombre, apellidos y localidad</li>
+							<li>Formato profesional con anchos de columna personalizados y estilos</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">09</div>
+					<div class="module-body">
+						<h3>Auditoría y Seguridad</h3>
+						<ul>
+							<li>Registro de auditoría en canal dedicado con retención de 90 días</li>
+							<li>Captura de: usuario, acción, modelo, datos, estado, IP, user agent y timestamp ISO 8601</li>
+							<li>Sanitización de entrada: eliminación de caracteres NULL, codificación HTML, trim</li>
+							<li>Headers de seguridad HTTP completos</li>
+							<li>Rate limiting: 30 requests por minuto por IP</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="access-section">
+				<h2>Endpoints API</h2>
+				<div class="endpoints-grid">
+					<div class="endpoint-group">
+						<h3>Autenticación</h3>
+						<div class="endpoint-list">
+							<div class="endpoint"><span class="method post">POST</span><span class="route">/api/auth/login</span></div>
+							<div class="endpoint"><span class="method post">POST</span><span class="route">/api/auth/logout</span></div>
+							<div class="endpoint"><span class="method get">GET</span><span class="route">/api/auth/user</span></div>
+						</div>
+					</div>
+					<div class="endpoint-group">
+						<h3>Recursos (Sesión)</h3>
+						<div class="endpoint-list">
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/ciudades</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/localidades</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/personas</span></div>
+							<div class="endpoint"><span class="method get">GET</span><span class="route">/api/personas/phone/{'{'}telefono{'}'}</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/oficinas</span></div>
+							<div class="endpoint"><span class="method get">GET</span><span class="route">/api/admin/users</span></div>
+							<div class="endpoint"><span class="method post">POST</span><span class="route">/api/admin/users</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/admin/users/{'{'}id{'}'}</span></div>
+							<div class="endpoint"><span class="method post">POST</span><span class="route">/api/admin/users/{'{'}id{'}'}/roles</span></div>
+							<div class="endpoint"><span class="method get">GET</span><span class="route">/api/admin/roles</span></div>
+						</div>
+					</div>
+					<div class="endpoint-group">
+						<h3>Integración Externa (Bearer Token)</h3>
+						<div class="endpoint-list">
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/v1/ciudades</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/v1/localidades</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/v1/personas</span></div>
+							<div class="endpoint"><span class="method crud">CRUD</span><span class="route">/api/v1/oficinas</span></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="tech-features">
+				<h2>Características Técnicas Destacadas</h2>
+				<div class="features-grid">
+					<div class="feature-item">
+						<h4>DNI como Identificador</h4>
+						<p>Las personas se buscan, actualizan y eliminan por DNI en lugar de ID numérico.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Tokens SHA-256</h4>
+						<p>Tokens hasheados con SHA-256, nunca almacenados en texto plano. Mostrados solo una vez al generarlos.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Autenticación Dual</h4>
+						<p>Sesión para usuarios web, tokens para integraciones externas server-to-server.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Audit Logging</h4>
+						<p>Canal de logs dedicado con retención de 90 días para cumplimiento normativo.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Sanitización de Entrada</h4>
+						<p>Eliminación de caracteres NULL, codificación HTML y trim automático.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Headers de Seguridad</h4>
+						<p>X-Content-Type-Options, X-XSS-Protection, X-Frame-Options, CSP, HSTS y más.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Rate Limiting</h4>
+						<p>30 requests por minuto por IP en endpoints sensibles contra abuso.</p>
+					</div>
+					<div class="feature-item">
+						<h4>CORS Configurado</h4>
+						<p>Configurado para dominios de producción específicos (alertafm.com, munichancay.com).</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="seeders-section">
+				<h2>Datos Iniciales (Seeders)</h2>
+				<div class="seeders-grid">
+					<div class="seeder-item">
+						<strong>RolePermissionSeeder</strong>
+						<span>2 roles + 10 permisos</span>
+					</div>
+					<div class="seeder-item">
+						<strong>UserSeeder</strong>
+						<span>3 usuarios de prueba</span>
+					</div>
+					<div class="seeder-item">
+						<strong>CiudadesSeeder</strong>
+						<span>15 ciudades venezolanas</span>
+					</div>
+					<div class="seeder-item">
+						<strong>LocalidadSeeder</strong>
+						<span>~65 localidades/barrios</span>
+					</div>
+					<div class="seeder-item">
+						<strong>PersonasSeeder</strong>
+						<span>15 personas de ejemplo</span>
+					</div>
+					<div class="seeder-item">
+						<strong>OficinasSeeder</strong>
+						<span>10 oficinas corporativas</span>
+					</div>
+					<div class="seeder-item">
+						<strong>AplicacionesSeeder</strong>
+						<span>6 aplicaciones externas con tokens</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="env-section">
+				<h2>Configuración del Entorno</h2>
+				<div class="env-grid">
+					<div class="env-item">
+						<span class="env-key">APP_NAME</span>
+						<span class="env-val">API - Gestor Web</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">DB</span>
+						<span class="env-val">MySQL 8.x</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">SESSION_DRIVER</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">CACHE_STORE</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">QUEUE_CONNECTION</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">FILESYSTEM_DISK</span>
+						<span class="env-val">local</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="api-cta">
+				<h2>¿Te interesa este proyecto?</h2>
+				<p>Puedes ver más detalles o contactarme para discutir implementaciones similares.</p>
+				<div class="cta-buttons">
+					<a href="/projects" class="btn">Ver Otros Proyectos</a>
+					<a href="/contact" class="btn btn-outline">Contactar</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<script>
+	import GLightbox from 'glightbox';
+	import 'glightbox/dist/css/glightbox.css';
+
+	GLightbox({
+		selector: '.glightbox',
+		zoomable: true,
+		draggable: true,
+		cssEfe: 'default',
+		touchNavigation: true,
+		loop: true,
+		closeOnOpen: true,
+		autoplayVideos: false,
+	});
+</script>
+
+<style>
+	.api {
+		max-width: 1100px;
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-bottom: 2rem;
+		color: var(--accent);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.back-link:hover {
+		text-decoration: underline;
+	}
+
+	.hero {
+		text-align: center;
+		padding: 2rem 0 3rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3rem;
+	}
+	.hero-badge {
+		display: inline-block;
+		padding: 0.3rem 1rem;
+		background: rgba(59, 130, 246, 0.1);
+		color: var(--accent);
+		border-radius: 9999px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.3rem;
+		letter-spacing: -0.02em;
+	}
+	.hero-subtitle {
+		font-size: 1.3rem;
+		color: var(--accent);
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+	.hero-desc {
+		max-width: 700px;
+		margin: 0 auto 2rem;
+		color: rgb(var(--gray));
+		line-height: 1.8;
+		font-size: 1.05rem;
+	}
+	.hero-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		justify-content: center;
+	}
+
+	.gallery-section {
+		margin-bottom: 4rem;
+	}
+	.gallery-section h2 {
+		text-align: center;
+		margin-bottom: 1.5rem;
+		font-size: 2rem;
+	}
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.2rem;
+	}
+	.gallery-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		overflow: hidden;
+		transition: var(--transition);
+		cursor: pointer;
+	}
+	.gallery-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-3px);
+	}
+	.gallery-item img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		display: block;
+		border-radius: 0;
+		border: none;
+	}
+	.gallery-item span {
+		display: block;
+		padding: 0.8rem 1rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: rgb(var(--black));
+		text-align: center;
+	}
+
+	.stack-section {
+		margin-bottom: 4rem;
+	}
+	.stack-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.stack-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+	.stack-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.2rem;
+		transition: var(--transition);
+	}
+	.stack-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-2px);
+	}
+	.stack-layer {
+		display: block;
+		font-size: 0.8rem;
+		color: var(--accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.3rem;
+	}
+	.stack-item strong {
+		color: rgb(var(--black));
+		font-size: 0.95rem;
+	}
+
+	.architecture-section {
+		margin-bottom: 4rem;
+	}
+	.architecture-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.arch-content {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 2rem;
+	}
+	.arch-tree, .arch-table {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+	}
+	.arch-tree h3, .arch-table h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	.arch-tree pre {
+		background: rgb(var(--gray-light));
+		padding: 1.2rem;
+		border-radius: 8px;
+		overflow-x: auto;
+		font-size: 0.85rem;
+		line-height: 1.6;
+	}
+	.arch-tree code {
+		background: none;
+		padding: 0;
+	}
+	.arch-table table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+	.arch-table th {
+		text-align: left;
+		padding: 0.6rem;
+		border-bottom: 2px solid rgb(var(--gray-light));
+		color: var(--accent);
+		font-weight: 600;
+	}
+	.arch-table td {
+		padding: 0.5rem 0.6rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+	}
+
+	.modules-section {
+		margin-bottom: 4rem;
+	}
+	.modules-section > h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.module-card {
+		display: flex;
+		gap: 1.5rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem 2rem;
+		margin-bottom: 1rem;
+		transition: var(--transition);
+	}
+	.module-card:hover {
+		box-shadow: var(--box-shadow-lg);
+	}
+	.module-num {
+		font-size: 2rem;
+		font-weight: 800;
+		color: rgba(59, 130, 246, 0.15);
+		flex-shrink: 0;
+		width: 50px;
+		text-align: center;
+		line-height: 1;
+		padding-top: 0.3rem;
+	}
+	.module-body {
+		flex: 1;
+	}
+	.module-body h3 {
+		font-size: 1.2rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.7rem;
+	}
+	.module-body p {
+		color: rgb(var(--gray));
+		margin-bottom: 0.8rem;
+		font-size: 0.95rem;
+	}
+	.module-body ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0.8rem;
+	}
+	.module-body ul li {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		padding: 0.2rem 0;
+		padding-left: 1.2rem;
+		position: relative;
+	}
+	.module-body ul li::before {
+		content: '▸';
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+	}
+	.module-detail {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+	}
+	.module-routes {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.5rem;
+	}
+	.route {
+		font-family: monospace;
+		font-size: 0.78rem;
+		padding: 0.2rem 0.6rem;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		color: rgb(var(--gray-dark));
+	}
+
+	.roles-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.8rem;
+		margin: 1rem 0;
+	}
+	.role-card {
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+	}
+	.role-card h4 {
+		margin-bottom: 0.3rem;
+		font-size: 1rem;
+	}
+	.role-card p {
+		font-size: 0.85rem;
+		margin-bottom: 0.3rem;
+	}
+	.role-card span {
+		font-size: 0.8rem;
+		display: block;
+	}
+	.role-admin {
+		background: rgba(239, 68, 68, 0.08);
+		color: #dc2626;
+		border: 1px solid rgba(239, 68, 68, 0.2);
+	}
+	.role-admin h4 { color: #dc2626; }
+	.role-admin p, .role-admin span { color: #991b1b; }
+	.role-user {
+		background: rgba(34, 197, 94, 0.08);
+		color: #16a34a;
+		border: 1px solid rgba(34, 197, 94, 0.2);
+	}
+	.role-user h4 { color: #16a34a; }
+	.role-user p, .role-user span { color: #166534; }
+
+	.dual-form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.8rem;
+		margin: 0.8rem 0;
+	}
+	.form-type {
+		padding: 0.8rem;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		text-align: center;
+	}
+	.form-type h4 {
+		font-size: 0.95rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.2rem;
+	}
+	.form-type p, .form-type ul {
+		font-size: 0.85rem;
+		margin: 0;
+		text-align: left;
+	}
+
+	.permission-levels {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.6rem;
+		margin: 1rem 0;
+	}
+	.perm-item {
+		padding: 0.8rem;
+		border-radius: 8px;
+		text-align: center;
+	}
+	.perm-item strong {
+		display: block;
+		margin-bottom: 0.2rem;
+		font-size: 0.95rem;
+	}
+	.perm-item span {
+		font-size: 0.8rem;
+	}
+	.perm-total {
+		background: rgba(239, 68, 68, 0.08);
+		border: 1px solid rgba(239, 68, 68, 0.2);
+	}
+	.perm-total strong { color: #dc2626; }
+	.perm-total span { color: #991b1b; }
+	.perm-write {
+		background: rgba(234, 179, 8, 0.08);
+		border: 1px solid rgba(234, 179, 8, 0.2);
+	}
+	.perm-write strong { color: #ca8a04; }
+	.perm-write span { color: #854d0e; }
+	.perm-read {
+		background: rgba(59, 130, 246, 0.08);
+		border: 1px solid rgba(59, 130, 246, 0.2);
+	}
+	.perm-read strong { color: #2563eb; }
+	.perm-read span { color: #1e40af; }
+	.perm-none {
+		background: rgb(var(--gray-light));
+		border: 1px solid rgb(var(--gray-light));
+	}
+	.perm-none strong { color: rgb(var(--gray-dark)); }
+	.perm-none span { color: rgb(var(--gray)); }
+
+	.access-section {
+		margin-bottom: 4rem;
+	}
+	.access-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.endpoints-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+	}
+	.endpoint-group {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+	}
+	.endpoint-group h3 {
+		font-size: 1.1rem;
+		color: rgb(var(--black));
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid var(--accent);
+	}
+	.endpoint-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.endpoint {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 0.4rem 0;
+	}
+	.method {
+		font-family: monospace;
+		font-size: 0.7rem;
+		font-weight: 700;
+		padding: 0.2rem 0.5rem;
+		border-radius: 4px;
+		min-width: 50px;
+		text-align: center;
+	}
+	.method.get { background: rgba(34, 197, 94, 0.15); color: #16a34a; }
+	.method.post { background: rgba(59, 130, 246, 0.15); color: #2563eb; }
+	.method.crud { background: rgba(139, 92, 246, 0.15); color: #7c3aed; }
+	.endpoint .route {
+		font-size: 0.85rem;
+	}
+
+	.tech-features {
+		margin-bottom: 4rem;
+	}
+	.tech-features h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: 1rem;
+	}
+	.feature-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.3rem;
+		transition: var(--transition);
+	}
+	.feature-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-2px);
+	}
+	.feature-item h4 {
+		font-size: 1rem;
+		color: var(--accent);
+		margin-bottom: 0.4rem;
+	}
+	.feature-item p {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+
+	.seeders-section {
+		margin-bottom: 4rem;
+	}
+	.seeders-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.seeders-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.seeder-item {
+		display: flex;
+		gap: 1rem;
+		align-items: baseline;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		padding: 0.8rem 1.2rem;
+	}
+	.seeder-item strong {
+		min-width: 180px;
+		color: rgb(var(--black));
+		font-size: 0.95rem;
+	}
+	.seeder-item span {
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+	}
+
+	.env-section {
+		margin-bottom: 4rem;
+	}
+	.env-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.env-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.8rem;
+	}
+	.env-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		padding: 0.8rem 1.2rem;
+	}
+	.env-key {
+		font-family: monospace;
+		font-size: 0.85rem;
+		color: var(--accent);
+		font-weight: 600;
+	}
+	.env-val {
+		font-size: 0.9rem;
+		color: rgb(var(--gray-dark));
+		font-weight: 500;
+	}
+
+	.api-cta {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		margin-bottom: 2rem;
+	}
+	.api-cta h2 {
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.api-cta p {
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		.arch-content {
+			grid-template-columns: 1fr;
+		}
+		.roles-grid {
+			grid-template-columns: 1fr;
+		}
+		.dual-form {
+			grid-template-columns: 1fr;
+		}
+		.permission-levels {
+			grid-template-columns: 1fr;
+		}
+		.module-card {
+			flex-direction: column;
+			gap: 0.5rem;
+			padding: 1.2rem;
+		}
+		.module-num {
+			width: auto;
+			text-align: left;
+		}
+		.seeder-item {
+			flex-direction: column;
+			gap: 0.2rem;
+		}
+		.seeder-item strong {
+			min-width: auto;
+		}
+		.gallery-item img {
+			height: 160px;
+		}
+		.endpoints-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	a.gallery-item {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+</style>

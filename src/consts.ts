@@ -90,6 +90,21 @@ export const PROJECTS = [
 		],
 	},
 	{
+		title: 'API - Gestor Web',
+		description: 'Sistema de gestión integral para el registro y administración de personas, ciudades, localidades, oficinas e integraciones con aplicaciones externas. Incluye autenticación dual (sesión y token), roles y permisos, exportación a Excel y auditoría completa.',
+		tech: ['Laravel 12', 'Vue.js 3', 'Inertia.js', 'Tailwind CSS', 'MySQL 8', 'Vite 6', 'Sanctum'],
+		link: '/projects/api',
+		images: [
+			'/images/api/login.png',
+			'/images/api/personas.png',
+			'/images/api/ciudades.png',
+			'/images/api/localidades.png',
+			'/images/api/oficinas.png',
+			'/images/api/exportar.png',
+			'/images/api/aplicaciones.png',
+		],
+	},
+	{
 		title: 'Plataforma de Seguridad Ciudadana',
 		description: 'Sistema web para la gestión de reportes de seguridad ciudadana en la Municipalidad de Chancay. Incluye formularios automatizados, control de usuarios y dashboards de seguimiento.',
 		tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5'],
