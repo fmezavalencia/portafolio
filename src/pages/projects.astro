@@ -1,0 +1,192 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, PROJECTS } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`Proyectos | ${SITE_TITLE}`} description="Proyectos desarrollados por Anthony Meza" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="projects-hero">
+				<h1>Proyectos</h1>
+				<p class="projects-subtitle">Soluciones que he desarrollado</p>
+			</section>
+
+		<section class="projects-grid">
+			{PROJECTS.map((project) => (
+				<div class:list={['project-card', { 'has-images': project.images }]}>
+					<div class="project-header">
+						<h2>{project.title}</h2>
+						<a href={project.link} class="project-link" target={project.link.startsWith('http') ? '_blank' : undefined}>
+							<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+								<path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path>
+							</svg>
+						</a>
+					</div>
+					{project.images && (
+						<div class="project-gallery">
+							{project.images.map((img) => (
+								<img src={img} alt={`Captura de ${project.title}`} loading="lazy" />
+							))}
+						</div>
+					)}
+					<p class="project-description">{project.description}</p>
+					<div class="project-tech">
+						{project.tech.map((t) => (
+							<span class="tag">{t}</span>
+						))}
+					</div>
+				</div>
+			))}
+		</section>
+
+			<section class="projects-cta">
+				<h2>¿Tienes un proyecto en mente?</h2>
+				<p>Estoy disponible para colaborar en nuevos proyectos y desafíos</p>
+				<a href="mailto:fmezavalencia@gmail.com" class="btn">Contáctame</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.projects-hero {
+		padding: 3rem 0;
+		text-align: center;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3rem;
+	}
+	.projects-hero h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.projects-subtitle {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 4rem;
+	}
+
+	.project-card {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 2rem;
+		transition: var(--transition);
+		display: flex;
+		flex-direction: column;
+	}
+	.project-card:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-4px);
+	}
+
+	.project-card.has-images {
+		grid-column: 1 / -1;
+	}
+
+	.project-gallery {
+		display: flex;
+		gap: 0.75rem;
+		overflow-x: auto;
+		padding-bottom: 0.5rem;
+		margin-bottom: 1.5rem;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: thin;
+	}
+	.project-gallery::-webkit-scrollbar {
+		height: 6px;
+	}
+	.project-gallery::-webkit-scrollbar-track {
+		background: rgb(var(--gray-light));
+		border-radius: 3px;
+	}
+	.project-gallery::-webkit-scrollbar-thumb {
+		background: rgb(var(--gray));
+		border-radius: 3px;
+	}
+	.project-gallery img {
+		height: 220px;
+		width: auto;
+		border-radius: 8px;
+		object-fit: cover;
+		scroll-snap-align: start;
+		flex-shrink: 0;
+		border: 1px solid rgb(var(--gray-light));
+		transition: var(--transition);
+	}
+	.project-gallery img:hover {
+		transform: scale(1.03);
+	}
+
+	.project-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1rem;
+	}
+	.project-header h2 {
+		font-size: 1.3rem;
+		color: rgb(var(--black));
+		margin: 0;
+		flex: 1;
+	}
+
+	.project-link {
+		color: var(--accent);
+		padding: 0.3rem;
+		border-radius: 6px;
+		transition: var(--transition);
+	}
+	.project-link:hover {
+		background: rgba(59, 130, 246, 0.1);
+	}
+
+	.project-description {
+		color: rgb(var(--gray-dark));
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		flex: 1;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.projects-cta {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+	}
+	.projects-cta h2 {
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.projects-cta p {
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+
+	@media (max-width: 720px) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

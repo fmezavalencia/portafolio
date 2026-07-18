@@ -1,0 +1,308 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SKILLS } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`Habilidades | ${SITE_TITLE}`} description="Habilidades técnicas de Anthony Meza" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="skills-hero">
+				<h1>Habilidades Técnicas</h1>
+				<p class="skills-subtitle">Tecnologías y herramientas que domino</p>
+			</section>
+
+			<section class="skills-grid">
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">💻</span>
+						<h2>Lenguajes de Programación</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.languages.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">🎨</span>
+						<h2>Frontend Web</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.frontend.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">⚙️</span>
+						<h2>Backend & APIs</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.backend.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">🗄️</span>
+						<h2>Bases de Datos</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.databases.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">📱</span>
+						<h2>Móvil</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.mobile.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">☁️</span>
+						<h2>Cloud & Datos</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.cloud.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+
+				<div class="skill-category">
+					<div class="category-header">
+						<span class="category-icon">🛠️</span>
+						<h2>Herramientas & CMS</h2>
+					</div>
+					<div class="skill-tags">
+						{SKILLS.tools.map((skill) => (
+							<span class="tag">{skill}</span>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section class="skill-levels">
+				<h2>Nivel de Dominio</h2>
+				<div class="levels-grid">
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 85%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">PHP / Laravel</span>
+							<span class="level-percent">85%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 80%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">JavaScript</span>
+							<span class="level-percent">80%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 75%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">HTML5 / CSS3</span>
+							<span class="level-percent">75%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 70%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">MySQL</span>
+							<span class="level-percent">70%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 65%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">Python</span>
+							<span class="level-percent">65%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 60%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">React / Vue.js</span>
+							<span class="level-percent">60%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 55%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">Flutter</span>
+							<span class="level-percent">55%</span>
+						</div>
+					</div>
+					<div class="level-item">
+						<div class="level-bar">
+							<div class="level-fill" style="width: 50%"></div>
+						</div>
+						<div class="level-info">
+							<span class="level-name">Java / .NET</span>
+							<span class="level-percent">50%</span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.skills-hero {
+		padding: 3rem 0;
+		text-align: center;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3rem;
+	}
+	.skills-hero h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.skills-subtitle {
+		font-size: 1.2rem;
+		color: rgb(var(--gray));
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 4rem;
+	}
+
+	.skill-category {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+		transition: var(--transition);
+	}
+	.skill-category:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.category-header {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		margin-bottom: 1rem;
+		padding-bottom: 0.8rem;
+		border-bottom: 2px solid rgb(var(--gray-light));
+	}
+	.category-icon {
+		font-size: 1.8rem;
+	}
+	.category-header h2 {
+		font-size: 1.3rem;
+		color: rgb(var(--black));
+		margin: 0;
+	}
+
+	.skill-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.skill-levels {
+		margin-bottom: 3rem;
+	}
+	.skill-levels h2 {
+		text-align: center;
+		color: rgb(var(--black));
+		margin-bottom: 2rem;
+	}
+
+	.levels-grid {
+		max-width: 700px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.level-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1rem 1.5rem;
+	}
+
+	.level-bar {
+		height: 8px;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		overflow: hidden;
+		margin-bottom: 0.5rem;
+	}
+
+	.level-fill {
+		height: 100%;
+		background: linear-gradient(90deg, var(--accent), var(--accent-light));
+		border-radius: 4px;
+		transition: width 1s ease-out;
+	}
+
+	.level-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.level-name {
+		font-weight: 600;
+		color: rgb(var(--black));
+	}
+
+	.level-percent {
+		color: var(--accent);
+		font-weight: 600;
+	}
+
+	@media (max-width: 720px) {
+		.skills-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

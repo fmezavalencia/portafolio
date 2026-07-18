@@ -1,0 +1,1159 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`Sistema de Registro de Incidentes de Seguridad Ciudadana | ${SITE_TITLE}`} description="Aplicación web para la gestión, registro y análisis de incidentes de seguridad en Chancay/Huaral/Aucallama - Perú" />
+	</head>
+	<body>
+		<Header />
+		<main class="sgcd">
+			<a href="/projects" class="back-link">← Volver a Proyectos</a>
+
+			<section class="hero">
+				<div class="hero-badge">Proyecto Destacado</div>
+				<h1>Registro de Incidentes</h1>
+				<p class="hero-subtitle">Sistema de Seguridad Ciudadana</p>
+				<p class="hero-desc">
+					Aplicación web diseñada para la gestión, registro y análisis de incidentes de seguridad
+					en la región de Chancay/Huaral/Aucallama (Perú). Permite a los operadores reportar
+					incidentes, administrar cámaras de vigilancia, registrar ciudadanos y generar reportes
+					estadísticos detallados con exportación a PDF.
+				</p>
+				<div class="hero-tags">
+					<span class="tag">Laravel 12</span>
+					<span class="tag">Vue.js 3</span>
+					<span class="tag">Inertia.js</span>
+					<span class="tag">Tailwind CSS</span>
+					<span class="tag">MySQL</span>
+					<span class="tag">Chart.js</span>
+					<span class="tag">Vite 6</span>
+				</div>
+			</section>
+
+			<section class="gallery-section">
+				<h2>Galería del Sistema</h2>
+				<div class="gallery-grid">
+					<a href="/images/sgcd/panel-estadisticas.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Panel de Estadísticas">
+						<img src="/images/sgcd/panel-estadisticas.png" alt="Panel de Estadísticas" loading="lazy" />
+						<span>Panel de Estadísticas</span>
+					</a>
+					<a href="/images/sgcd/crear-incidente-1.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Crear Incidente">
+						<img src="/images/sgcd/crear-incidente-1.png" alt="Crear Incidente" loading="lazy" />
+						<span>Crear Incidente</span>
+					</a>
+					<a href="/images/sgcd/ver-incidentes.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ver Incidentes">
+						<img src="/images/sgcd/ver-incidentes.png" alt="Ver Incidentes" loading="lazy" />
+						<span>Ver Incidentes</span>
+					</a>
+					<a href="/images/sgcd/crear-incidente-2.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Formulario de Incidente">
+						<img src="/images/sgcd/crear-incidente-2.png" alt="Formulario de Incidente" loading="lazy" />
+						<span>Formulario de Incidente</span>
+					</a>
+					<a href="/images/sgcd/gestion-camaras.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Cámaras">
+						<img src="/images/sgcd/gestion-camaras.png" alt="Gestión de Cámaras" loading="lazy" />
+						<span>Gestión de Cámaras</span>
+					</a>
+					<a href="/images/sgcd/gestion-usuarios.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Usuarios">
+						<img src="/images/sgcd/gestion-usuarios.png" alt="Gestión de Usuarios" loading="lazy" />
+						<span>Gestión de Usuarios</span>
+					</a>
+					<a href="/images/sgcd/ubicaciones/ubicaciones-1.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones e Incidentes">
+						<img src="/images/sgcd/ubicaciones/ubicaciones-1.png" alt="Ubicaciones e Incidentes" loading="lazy" />
+						<span>Ubicaciones e Incidentes</span>
+					</a>
+					<a href="/images/sgcd/ubicaciones/ubicaciones-2.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones Geográficas">
+						<img src="/images/sgcd/ubicaciones/ubicaciones-2.png" alt="Ubicaciones Geográficas" loading="lazy" />
+						<span>Ubicaciones Geográficas</span>
+					</a>
+					<a href="/images/sgcd/ubicaciones/ubicaciones-3.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Mapa de Ubicaciones">
+						<img src="/images/sgcd/ubicaciones/ubicaciones-3.png" alt="Mapa de Ubicaciones" loading="lazy" />
+						<span>Mapa de Ubicaciones</span>
+					</a>
+				</div>
+			</section>
+
+			<section class="stack-section">
+				<h2>Stack Tecnológico</h2>
+				<div class="stack-grid">
+					<div class="stack-item">
+						<span class="stack-layer">Backend</span>
+						<strong>Laravel 12.x, PHP 8.2+</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Frontend</span>
+						<strong>Vue.js 3.4+, Inertia.js v2</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">CSS</span>
+						<strong>Tailwind CSS 3.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Build</span>
+						<strong>Vite 6.x</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Base de datos</span>
+						<strong>MySQL</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Gráficas</span>
+						<strong>Chart.js 4.x + vue-chartjs</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">PDF</span>
+						<strong>DomPDF (barryvdh/laravel-dompdf)</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Roles/Permisos</span>
+						<strong>Spatie Laravel Permission v6</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Autenticación</span>
+						<strong>Laravel Breeze + Sanctum</strong>
+					</div>
+					<div class="stack-item">
+						<span class="stack-layer">Rutas en JS</span>
+						<strong>Ziggy v2</strong>
+					</div>
+				</div>
+			</section>
+
+			<section class="architecture-section">
+				<h2>Arquitectura del Sistema</h2>
+				<div class="arch-content">
+					<div class="arch-tree">
+						<h3>Relaciones de Modelos</h3>
+						<pre><code>CategoriaIncidente
+    └── SubcategoriaIncidente
+            └── TipoIncidente
+
+Zonas
+    └── Ubicacion (localidad)
+            ├── Distrito
+            ├── Camara
+            └── Incidentes
+                    ├── Ciudadano (reportante)
+                    ├── User (operador)
+                    ├── TipoIncidente
+                    └── Camara (asociada)</code></pre>
+					</div>
+					<div class="arch-table">
+						<h3>Modelos Principales</h3>
+						<table>
+							<thead>
+								<tr><th>Modelo</th><th>Descripción</th><th>Campo Clave</th></tr>
+							</thead>
+							<tbody>
+								<tr><td><strong>User</strong></td><td>Usuarios del sistema</td><td>name, email, roles</td></tr>
+								<tr><td><strong>Ciudadano</strong></td><td>Ciudadanos registrados (DNI como PK)</td><td>dni, nombre, apellidos</td></tr>
+								<tr><td><strong>Incidentes</strong></td><td>Registros de incidentes de seguridad</td><td>fecha_hora, ubicacion, tipo, estado, imagen</td></tr>
+								<tr><td><strong>Ubicacion</strong></td><td>Localidades dentro de distritos</td><td>localidad, distrito_id, zona_id</td></tr>
+								<tr><td><strong>Distrito</strong></td><td>Distritos geográficos</td><td>nombre (Chancay, Huaral, Aucallama)</td></tr>
+								<tr><td><strong>Zonas</strong></td><td>Zonas geográficas de agrupación</td><td>nombre</td></tr>
+								<tr><td><strong>Camara</strong></td><td>Cámaras de vigilancia CCTV</td><td>nombre, ubicacion_id</td></tr>
+								<tr><td><strong>TipoIncidente</strong></td><td>Catálogo de tipos de incidente</td><td>tipo_incidente, subcategoria_id, codigo</td></tr>
+								<tr><td><strong>SubcategoriaIncidente</strong></td><td>Subcategorías del catálogo</td><td>nombre, categoria_id</td></tr>
+								<tr><td><strong>CategoriaIncidente</strong></td><td>Categorías del catálogo</td><td>nombre</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+
+			<section class="modules-section">
+				<h2>Módulos Funcionales</h2>
+
+				<div class="module-card">
+					<div class="module-num">01</div>
+					<div class="module-body">
+						<h3>Autenticación y Gestión de Usuarios</h3>
+						<ul>
+							<li>Inicio de sesión y registro de usuarios</li>
+							<li>Recuperación y restablecimiento de contraseña</li>
+							<li>Verificación de correo electrónico</li>
+							<li>Sesión almacenada en base de datos</li>
+						</ul>
+						<div class="module-routes">
+							<span class="route">GET/POST /login</span>
+							<span class="route">GET/POST /register</span>
+							<span class="route">GET/POST /forgot-password</span>
+							<span class="route">POST /logout</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">02</div>
+					<div class="module-body">
+						<h3>Sistema de Roles y Permisos</h3>
+						<p>3 roles con permisos granulares (40+ permisos):</p>
+						<div class="roles-grid">
+							<div class="role-card role-admin">
+								<h4>Admin</h4>
+								<p>Acceso total al sistema</p>
+								<span>CRUD completo, eliminación de usuarios, gestión de cámaras</span>
+							</div>
+							<div class="role-card role-client">
+								<h4>Cliente</h4>
+								<p>Acceso a estadísticas y lectura</p>
+								<span>Ver incidentes, estadísticas, reportes PDF</span>
+							</div>
+							<div class="role-card role-user">
+								<h4>Usuario</h4>
+								<p>Operador de campo</p>
+								<span>Registrar incidentes desde cámaras, ver sus propios registros</span>
+							</div>
+						</div>
+						<div class="module-routes">
+							<span class="route">incidentes.*</span>
+							<span class="route">ubicaciones.*</span>
+							<span class="route">distritos.*</span>
+							<span class="route">camaras.*</span>
+							<span class="route">admin.usuarios.*</span>
+							<span class="route">profile.*</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">03</div>
+					<div class="module-body">
+						<h3>Gestión de Incidentes</h3>
+						<div class="dual-form">
+							<div class="form-type">
+								<h4>Registro Manual</h4>
+								<p>Formulario estándar para reporte de incidentes</p>
+							</div>
+							<div class="form-type">
+								<h4>Registro desde Cámara</h4>
+								<p>Formulario con imagen pre-cargada de la cámara de vigilancia</p>
+							</div>
+						</div>
+						<p class="module-detail"><strong>Campos:</strong> Fecha/hora, ubicación, tipo, descripción, referencia geográfica, estado, imagen, cámara asociada, ciudadano reportante (DNI), teléfono de contacto</p>
+						<p class="module-detail"><strong>Funciones:</strong> Búsqueda y filtrado por reportante, ubicación, fecha, usuario, tipo, cámara. Paginación de 20 registros. Aislamiento de datos por usuario.</p>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">04</div>
+					<div class="module-body">
+						<h3>Gestión de Ciudadanos</h3>
+						<ul>
+							<li>Registro de ciudadanos por DNI (validación de 8 caracteres)</li>
+							<li>Actualización de datos personales</li>
+							<li>Consulta por DNI</li>
+							<li>Creación automática al reportar incidente con DNI nuevo</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">05</div>
+					<div class="module-body">
+						<h3>Gestión de Cámaras de Vigilancia</h3>
+						<ul>
+							<li>CRUD completo de cámaras</li>
+							<li>Asociación con ubicaciones geográficas</li>
+							<li>Listado de cámaras disponibles</li>
+							<li>Vinculación de cámaras con incidentes</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">06</div>
+					<div class="module-body">
+						<h3>Catálogos de Clasificación</h3>
+						<p>H jerarquía de clasificación:</p>
+						<div class="catalog-flow">
+							<span>CategoríaIncidente</span>
+							<span class="arrow">→</span>
+							<span>SubcategoríaIncidente</span>
+							<span class="arrow">→</span>
+							<span>TipoIncidente</span>
+						</div>
+						<p class="module-detail">19 tipos de incidente precargados: Asalto, Robo, Secuestros, Extorsión, Accidentes viales, Incendios y otros delitos catalogados.</p>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">07</div>
+					<div class="module-body">
+						<h3>Gestión Geográfica</h3>
+						<div class="geo-hierarchy">
+							<div class="geo-level">
+								<strong>Zonas</strong>
+								<span>Agrupaciones geográficas amplias</span>
+							</div>
+							<div class="geo-level">
+								<strong>Distritos</strong>
+								<span>Chancay, Huaral, Aucallama</span>
+							</div>
+							<div class="geo-level">
+								<strong>Ubicaciones</strong>
+								<span>26 localidades en Chancay (Peralvillo, Buena Vista, Chancayllo, Centro de Chancay, etc.)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">08</div>
+					<div class="module-body">
+						<h3>Dashboard y Estadísticas</h3>
+						<p>Panel de análisis estadístico accesible para roles Admin y Cliente.</p>
+						<div class="stats-grid">
+							<div class="stat-item">Incidentes por zona</div>
+							<div class="stat-item">Tipos más reportados</div>
+							<div class="stat-item">Top 10 lugares</div>
+							<div class="stat-item">Total de incidentes</div>
+							<div class="stat-item">Lugares por zona</div>
+							<div class="stat-item">Tipos por ubicación</div>
+							<div class="stat-item">Incidentes por usuario</div>
+							<div class="stat-item">Incidentes por cámara</div>
+							<div class="stat-item">Incidentes por mes</div>
+							<div class="stat-item">Incidentes por zona y tipo</div>
+						</div>
+						<p class="module-detail"><strong>Filtros:</strong> Por año/mes, zona geográfica, ubicación/localidad, tipo de incidente. Drill-down interactivo: Zonas → Lugares → Tipos de incidente.</p>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">09</div>
+					<div class="module-body">
+						<h3>Exportación a PDF</h3>
+						<div class="pdf-types">
+							<div class="pdf-type">
+								<h4>Ficha Individual</h4>
+								<p>Datos completos del incidente con corrección automática de orientación EXIF. Formato A4 vertical.</p>
+							</div>
+							<div class="pdf-type">
+								<h4>Reporte Masivo Filtrado</h4>
+								<p>Hasta 2,000 registros con filtros aplicados. Formato A4 horizontal (landscape).</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="module-card">
+					<div class="module-num">10</div>
+					<div class="module-body">
+						<h3>Gestión de Perfil</h3>
+						<ul>
+							<li>Edición de nombre y correo electrónico</li>
+							<li>Cambio de contraseña</li>
+							<li>Eliminación de cuenta (requiere confirmación)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="access-section">
+				<h2>Matriz de Acceso por Rol</h2>
+				<div class="table-responsive">
+					<table class="access-table">
+						<thead>
+							<tr>
+								<th>Ruta</th>
+								<th>Admin</th>
+								<th>Cliente</th>
+								<th>Usuario</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td>Dashboard</td><td>Incidentes</td><td>Incidentes</td><td>Formulario Cámara</td></tr>
+							<tr><td>Listar incidentes</td><td>Total</td><td>Total</td><td>Solo propios</td></tr>
+							<tr><td>Registrar incidente</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+							<tr><td>Editar incidente</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+							<tr><td>Eliminar incidente</td><td class="yes">Sí</td><td class="no">No</td><td class="no">No</td></tr>
+							<tr><td>Estadísticas</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="no">No</td></tr>
+							<tr><td>Reportes PDF</td><td class="yes">Sí</td><td class="yes">Sí</td><td class="no">No</td></tr>
+							<tr><td>Gestionar usuarios</td><td class="yes">Sí</td><td class="no">No</td><td class="no">No</td></tr>
+							<tr><td>Gestionar cámaras</td><td class="yes">Sí</td><td class="no">No</td><td class="no">No</td></tr>
+							<tr><td>Gestionar catálogos</td><td class="yes">Sí</td><td>Parcial</td><td class="no">No</td></tr>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="tech-features">
+				<h2>Características Técnicas Destacadas</h2>
+				<div class="features-grid">
+					<div class="feature-item">
+						<h4>Almacenamiento Privado</h4>
+						<p>Las imágenes de incidentes se guardan en disco local privado y se sirven a través de un controlador con verificación de autenticación.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Normalización de Texto</h4>
+						<p>Las localidades y descripciones se almacenan automáticamente en minúsculas.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Corrección EXIF</h4>
+						<p>Las imágenes en PDF se orientan automáticamente según sus metadatos EXIF.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Sesiones en BD</h4>
+						<p>Las sesiones se almacenan en base de datos para mayor seguridad.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Cache de Permisos</h4>
+						<p>Los permisos se cachean por 24 horas con invalidación automática.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Timezone America/Lima</h4>
+						<p>Todas las fechas se gestionan en zona horaria de Perú.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Ziggy</h4>
+						<p>Integración de rutas Laravel en JavaScript para el frontend Vue.js.</p>
+					</div>
+					<div class="feature-item">
+						<h4>Drill-down Interactivo</h4>
+						<p>Navegación jerárquica en las gráficas: Zonas → Lugares → Tipos.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="env-section">
+				<h2>Configuración del Entorno</h2>
+				<div class="env-grid">
+					<div class="env-item">
+						<span class="env-key">APP_NAME</span>
+						<span class="env-val">Sistema de Registro de Incidentes</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">DB</span>
+						<span class="env-val">MySQL (sgcd)</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">SESSION_DRIVER</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">CACHE_STORE</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">QUEUE_CONNECTION</span>
+						<span class="env-val">database</span>
+					</div>
+					<div class="env-item">
+						<span class="env-key">FILESYSTEM_DISK</span>
+						<span class="env-val">local</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="seeders-section">
+				<h2>Datos Iniciales (Seeders)</h2>
+				<div class="seeders-grid">
+					<div class="seeder-item">
+						<strong>Roles</strong>
+						<span>Admin, Cliente, Usuario</span>
+					</div>
+					<div class="seeder-item">
+						<strong>Usuario admin</strong>
+						<span>admin@gmail.com / 2025</span>
+					</div>
+					<div class="seeder-item">
+						<strong>19 tipos de incidente</strong>
+						<span>Asalto, Robo, Secuestros, Extorsión, Accidentes viales, Incendios, etc.</span>
+					</div>
+					<div class="seeder-item">
+						<strong>3 distritos</strong>
+						<span>Chancay, Huaral, Aucallama</span>
+					</div>
+					<div class="seeder-item">
+						<strong>26 localidades en Chancay</strong>
+						<span>Peralvillo, Buena Vista, Chancayllo, Cerro La Culebra, Centro de Chancay, etc.</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="sgcd-cta">
+				<h2>¿Te interesa este proyecto?</h2>
+				<p>Puedes ver más detalles o contactarme para discutir implementaciones similares.</p>
+				<div class="cta-buttons">
+					<a href="/projects" class="btn">Ver Otros Proyectos</a>
+					<a href="/contact" class="btn btn-outline">Contactar</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<script>
+	import GLightbox from 'glightbox';
+	import 'glightbox/dist/css/glightbox.css';
+
+	GLightbox({
+		selector: '.glightbox',
+		zoomable: true,
+		draggable: true,
+		cssEfe: 'default',
+		touchNavigation: true,
+		loop: true,
+		closeOnOpen: true,
+		autoplayVideos: false,
+	});
+</script>
+
+<style>
+	.sgcd {
+		max-width: 1100px;
+	}
+
+	.back-link {
+		display: inline-block;
+		margin-bottom: 2rem;
+		color: var(--accent);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.back-link:hover {
+		text-decoration: underline;
+	}
+
+	/* Hero */
+	.hero {
+		text-align: center;
+		padding: 2rem 0 3rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3rem;
+	}
+	.hero-badge {
+		display: inline-block;
+		padding: 0.3rem 1rem;
+		background: rgba(59, 130, 246, 0.1);
+		color: var(--accent);
+		border-radius: 9999px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.3rem;
+		letter-spacing: -0.02em;
+	}
+	.hero-subtitle {
+		font-size: 1.3rem;
+		color: var(--accent);
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+	.hero-desc {
+		max-width: 700px;
+		margin: 0 auto 2rem;
+		color: rgb(var(--gray));
+		line-height: 1.8;
+		font-size: 1.05rem;
+	}
+	.hero-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		justify-content: center;
+	}
+
+	/* Gallery */
+	.gallery-section {
+		margin-bottom: 4rem;
+	}
+	.gallery-section h2 {
+		text-align: center;
+		margin-bottom: 1.5rem;
+		font-size: 2rem;
+	}
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.2rem;
+	}
+	.gallery-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		overflow: hidden;
+		transition: var(--transition);
+		cursor: pointer;
+	}
+	.gallery-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-3px);
+	}
+	.gallery-item img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+		display: block;
+		border-radius: 0;
+		border: none;
+	}
+	.gallery-item span {
+		display: block;
+		padding: 0.8rem 1rem;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: rgb(var(--black));
+		text-align: center;
+	}
+
+	/* Stack */
+	.stack-section {
+		margin-bottom: 4rem;
+	}
+	.stack-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.stack-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+	.stack-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.2rem;
+		transition: var(--transition);
+	}
+	.stack-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-2px);
+	}
+	.stack-layer {
+		display: block;
+		font-size: 0.8rem;
+		color: var(--accent);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.3rem;
+	}
+	.stack-item strong {
+		color: rgb(var(--black));
+		font-size: 0.95rem;
+	}
+
+	/* Architecture */
+	.architecture-section {
+		margin-bottom: 4rem;
+	}
+	.architecture-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.arch-content {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 2rem;
+	}
+	.arch-tree, .arch-table {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+	}
+	.arch-tree h3, .arch-table h3 {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--black));
+	}
+	.arch-tree pre {
+		background: rgb(var(--gray-light));
+		padding: 1.2rem;
+		border-radius: 8px;
+		overflow-x: auto;
+		font-size: 0.85rem;
+		line-height: 1.6;
+	}
+	.arch-tree code {
+		background: none;
+		padding: 0;
+	}
+	.arch-table table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.9rem;
+	}
+	.arch-table th {
+		text-align: left;
+		padding: 0.6rem;
+		border-bottom: 2px solid rgb(var(--gray-light));
+		color: var(--accent);
+		font-weight: 600;
+	}
+	.arch-table td {
+		padding: 0.5rem 0.6rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		color: rgb(var(--gray-dark));
+	}
+
+	/* Modules */
+	.modules-section {
+		margin-bottom: 4rem;
+	}
+	.modules-section > h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.module-card {
+		display: flex;
+		gap: 1.5rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem 2rem;
+		margin-bottom: 1rem;
+		transition: var(--transition);
+	}
+	.module-card:hover {
+		box-shadow: var(--box-shadow-lg);
+	}
+	.module-num {
+		font-size: 2rem;
+		font-weight: 800;
+		color: rgba(59, 130, 246, 0.15);
+		flex-shrink: 0;
+		width: 50px;
+		text-align: center;
+		line-height: 1;
+		padding-top: 0.3rem;
+	}
+	.module-body {
+		flex: 1;
+	}
+	.module-body h3 {
+		font-size: 1.2rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.7rem;
+	}
+	.module-body p {
+		color: rgb(var(--gray));
+		margin-bottom: 0.8rem;
+		font-size: 0.95rem;
+	}
+	.module-body ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0.8rem;
+	}
+	.module-body ul li {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		padding: 0.2rem 0;
+		padding-left: 1.2rem;
+		position: relative;
+	}
+	.module-body ul li::before {
+		content: '▸';
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+	}
+	.module-detail {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+	}
+	.module-routes {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.5rem;
+	}
+	.route {
+		font-family: monospace;
+		font-size: 0.78rem;
+		padding: 0.2rem 0.6rem;
+		background: rgb(var(--gray-light));
+		border-radius: 4px;
+		color: rgb(var(--gray-dark));
+	}
+
+	/* Roles */
+	.roles-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.8rem;
+		margin: 1rem 0;
+	}
+	.role-card {
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+	}
+	.role-card h4 {
+		margin-bottom: 0.3rem;
+		font-size: 1rem;
+	}
+	.role-card p {
+		font-size: 0.85rem;
+		margin-bottom: 0.3rem;
+	}
+	.role-card span {
+		font-size: 0.8rem;
+		display: block;
+	}
+	.role-admin {
+		background: rgba(239, 68, 68, 0.08);
+		color: #dc2626;
+		border: 1px solid rgba(239, 68, 68, 0.2);
+	}
+	.role-admin h4 { color: #dc2626; }
+	.role-admin p, .role-admin span { color: #991b1b; }
+	.role-client {
+		background: rgba(59, 130, 246, 0.08);
+		color: #2563eb;
+		border: 1px solid rgba(59, 130, 246, 0.2);
+	}
+	.role-client h4 { color: #2563eb; }
+	.role-client p, .role-client span { color: #1e40af; }
+	.role-user {
+		background: rgba(34, 197, 94, 0.08);
+		color: #16a34a;
+		border: 1px solid rgba(34, 197, 94, 0.2);
+	}
+	.role-user h4 { color: #16a34a; }
+	.role-user p, .role-user span { color: #166534; }
+
+	/* Dual form */
+	.dual-form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.8rem;
+		margin: 0.8rem 0;
+	}
+	.form-type {
+		padding: 0.8rem;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		text-align: center;
+	}
+	.form-type h4 {
+		font-size: 0.95rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.2rem;
+	}
+	.form-type p {
+		font-size: 0.85rem;
+		margin: 0;
+	}
+
+	/* Catalog flow */
+	.catalog-flow {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin: 0.8rem 0;
+		flex-wrap: wrap;
+	}
+	.catalog-flow span {
+		padding: 0.4rem 0.8rem;
+		background: rgba(59, 130, 246, 0.08);
+		border-radius: 6px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: rgb(var(--black));
+	}
+	.arrow {
+		color: var(--accent);
+		font-weight: 700;
+		background: none !important;
+		padding: 0 !important;
+	}
+
+	/* Geo hierarchy */
+	.geo-hierarchy {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		margin: 0.8rem 0;
+	}
+	.geo-level {
+		display: flex;
+		gap: 0.8rem;
+		align-items: baseline;
+		padding: 0.6rem 1rem;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		border-left: 3px solid var(--accent);
+	}
+	.geo-level strong {
+		color: rgb(var(--black));
+		min-width: 100px;
+	}
+	.geo-level span {
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+	}
+
+	/* Stats grid */
+	.stats-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 0.8rem 0;
+	}
+	.stat-item {
+		padding: 0.35rem 0.8rem;
+		background: rgba(59, 130, 246, 0.06);
+		border: 1px solid rgba(59, 130, 246, 0.15);
+		border-radius: 6px;
+		font-size: 0.85rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	/* PDF types */
+	.pdf-types {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.8rem;
+		margin: 0.8rem 0;
+	}
+	.pdf-type {
+		padding: 1rem;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+	}
+	.pdf-type h4 {
+		font-size: 0.95rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.3rem;
+	}
+	.pdf-type p {
+		font-size: 0.85rem;
+		margin: 0;
+		color: rgb(var(--gray));
+	}
+
+	/* Access table */
+	.access-section {
+		margin-bottom: 4rem;
+	}
+	.access-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.table-responsive {
+		overflow-x: auto;
+	}
+	.access-table {
+		width: 100%;
+		border-collapse: collapse;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		overflow: hidden;
+	}
+	.access-table th {
+		background: var(--accent);
+		color: white;
+		padding: 0.8rem 1rem;
+		text-align: left;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+	.access-table td {
+		padding: 0.6rem 1rem;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		font-size: 0.9rem;
+		color: rgb(var(--gray-dark));
+	}
+	.access-table tbody tr:hover {
+		background: rgba(59, 130, 246, 0.03);
+	}
+	.access-table .yes {
+		color: #16a34a;
+		font-weight: 600;
+	}
+	.access-table .no {
+		color: #dc2626;
+		font-weight: 600;
+	}
+
+	/* Tech features */
+	.tech-features {
+		margin-bottom: 4rem;
+	}
+	.tech-features h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		gap: 1rem;
+	}
+	.feature-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.3rem;
+		transition: var(--transition);
+	}
+	.feature-item:hover {
+		box-shadow: var(--box-shadow-lg);
+		transform: translateY(-2px);
+	}
+	.feature-item h4 {
+		font-size: 1rem;
+		color: var(--accent);
+		margin-bottom: 0.4rem;
+	}
+	.feature-item p {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+
+	/* Env */
+	.env-section {
+		margin-bottom: 4rem;
+	}
+	.env-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.env-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.8rem;
+	}
+	.env-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		padding: 0.8rem 1.2rem;
+	}
+	.env-key {
+		font-family: monospace;
+		font-size: 0.85rem;
+		color: var(--accent);
+		font-weight: 600;
+	}
+	.env-val {
+		font-size: 0.9rem;
+		color: rgb(var(--gray-dark));
+		font-weight: 500;
+	}
+
+	/* Seeders */
+	.seeders-section {
+		margin-bottom: 4rem;
+	}
+	.seeders-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 2rem;
+	}
+	.seeders-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+	.seeder-item {
+		display: flex;
+		gap: 1rem;
+		align-items: baseline;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+		padding: 0.8rem 1.2rem;
+	}
+	.seeder-item strong {
+		min-width: 180px;
+		color: rgb(var(--black));
+		font-size: 0.95rem;
+	}
+	.seeder-item span {
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+	}
+
+	/* CTA */
+	.sgcd-cta {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		margin-bottom: 2rem;
+	}
+	.sgcd-cta h2 {
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.sgcd-cta p {
+		color: rgb(var(--gray));
+		margin-bottom: 1.5rem;
+	}
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* Responsive */
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		.arch-content {
+			grid-template-columns: 1fr;
+		}
+		.roles-grid {
+			grid-template-columns: 1fr;
+		}
+		.dual-form {
+			grid-template-columns: 1fr;
+		}
+		.pdf-types {
+			grid-template-columns: 1fr;
+		}
+		.module-card {
+			flex-direction: column;
+			gap: 0.5rem;
+			padding: 1.2rem;
+		}
+		.module-num {
+			width: auto;
+			text-align: left;
+		}
+		.seeder-item {
+			flex-direction: column;
+			gap: 0.2rem;
+		}
+		.seeder-item strong {
+			min-width: auto;
+		}
+		.gallery-item img {
+			height: 160px;
+		}
+	}
+
+	a.gallery-item {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+</style>

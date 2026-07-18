@@ -1,63 +1,270 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={`Sobre Mí | ${SITE_TITLE}`} description="Conoce más sobre Flavio Anthony Meza Valencia" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="about-hero">
+				<div class="about-intro">
+					<h1>Sobre Mí</h1>
+					<p class="about-subtitle">Técnico en Desarrollo de Software</p>
+				</div>
+			</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<section class="about-content">
+				<div class="about-text">
+					<h2>Perfil Profesional</h2>
+					<p>
+						Técnico en Desarrollo de Software, con experiencia en prácticas preprofesionales en
+						instituciones y empresas. Experiencia en desarrollo de aplicaciones web y sistemas de
+						gestión de información, con conocimientos en programación, bases de datos y frameworks modernos.
+					</p>
+					<p>
+						Apasionado por crear soluciones tecnológicas que resuelvan problemas reales. Me destaco
+						por mi capacidad de aprendizaje rápido, trabajo en equipo y compromiso con la calidad
+						del código.
+					</p>
+				</div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+				<div class="about-sidebar">
+					<div class="info-card">
+						<h3>Datos de Contacto</h3>
+						<div class="info-item">
+							<span class="info-label">Email:</span>
+							<a href="mailto:{PERSONAL_INFO.email}">{PERSONAL_INFO.email}</a>
+						</div>
+						<div class="info-item">
+							<span class="info-label">Teléfono:</span>
+							<a href="tel:{PERSONAL_INFO.phone}">{PERSONAL_INFO.phone}</a>
+						</div>
+						<div class="info-item">
+							<span class="info-label">Ubicación:</span>
+							<span>{PERSONAL_INFO.location}</span>
+						</div>
+						<div class="info-item">
+							<span class="info-label">Idioma:</span>
+							<span>Inglés - Nivel B1 (Intermedio)</span>
+						</div>
+					</div>
+				</div>
+			</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<section class="education">
+				<h2>Educación</h2>
+				<div class="education-list">
+					{EDUCATION.map((edu) => (
+						<div class="education-item">
+							<div class="education-header">
+								<h3>{edu.degree}</h3>
+								<span class="education-period">{edu.period}</span>
+							</div>
+							<p class="education-institution">{edu.institution}</p>
+							<span class="education-status">{edu.status}</span>
+						</div>
+					))}
+				</div>
+			</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<section class="certifications">
+				<h2>Certificaciones</h2>
+				<div class="cert-list">
+					{CERTIFICATIONS.map((cert) => (
+						<div class="cert-item">
+							<span class="cert-icon">🎓</span>
+							<span>{cert}</span>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<section class="soft-skills">
+				<h2>Competencias Personales</h2>
+				<div class="soft-skills-grid">
+					{SOFT_SKILLS.map((skill) => (
+						<div class="soft-skill-item">
+							<span class="soft-skill-icon">✓</span>
+							<span>{skill}</span>
+						</div>
+					))}
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.about-hero {
+		padding: 3rem 0;
+		text-align: center;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3rem;
+	}
+	.about-intro h1 {
+		font-size: 2.5rem;
+		color: rgb(var(--black));
+		margin-bottom: 0.5rem;
+	}
+	.about-subtitle {
+		font-size: 1.2rem;
+		color: var(--accent);
+		font-weight: 500;
+	}
+
+	.about-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		margin-bottom: 4rem;
+	}
+	.about-text h2 {
+		color: rgb(var(--black));
+		margin-bottom: 1rem;
+	}
+	.about-text p {
+		color: rgb(var(--gray-dark));
+		line-height: 1.8;
+		margin-bottom: 1.5rem;
+	}
+
+	.info-card {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+	}
+	.info-card h3 {
+		color: rgb(var(--black));
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid var(--accent);
+	}
+	.info-item {
+		margin-bottom: 0.8rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.info-label {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+		margin-bottom: 0.2rem;
+	}
+	.info-item a, .info-item span {
+		color: rgb(var(--gray-dark));
+		font-size: 0.95rem;
+	}
+
+	.education {
+		margin-bottom: 4rem;
+	}
+	.education h2 {
+		color: rgb(var(--black));
+		margin-bottom: 1.5rem;
+	}
+	.education-item {
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1.5rem;
+		margin-bottom: 1rem;
+		border-left: 4px solid var(--accent);
+	}
+	.education-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.education-header h3 {
+		color: rgb(var(--black));
+		font-size: 1.2rem;
+		margin: 0;
+	}
+	.education-period {
+		color: var(--accent);
+		font-weight: 500;
+		font-size: 0.9rem;
+	}
+	.education-institution {
+		color: rgb(var(--gray));
+		margin: 0.5rem 0;
+	}
+	.education-status {
+		display: inline-block;
+		padding: 0.2rem 0.8rem;
+		background: rgba(34, 197, 94, 0.1);
+		color: #16a34a;
+		border-radius: 9999px;
+		font-size: 0.85rem;
+		font-weight: 500;
+	}
+
+	.certifications {
+		margin-bottom: 4rem;
+	}
+	.certifications h2 {
+		color: rgb(var(--black));
+		margin-bottom: 1.5rem;
+	}
+	.cert-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1rem;
+	}
+	.cert-item {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1rem 1.5rem;
+	}
+	.cert-icon {
+		font-size: 1.5rem;
+	}
+
+	.soft-skills h2 {
+		color: rgb(var(--black));
+		margin-bottom: 1.5rem;
+	}
+	.soft-skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+	}
+	.soft-skill-item {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		padding: 1rem 1.5rem;
+	}
+	.soft-skill-icon {
+		color: #16a34a;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 720px) {
+		.about-content {
+			grid-template-columns: 1fr;
+		}
+		.education-header {
+			flex-direction: column;
+		}
+	}
+</style>
