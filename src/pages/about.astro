@@ -42,12 +42,8 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 							<span class="info-label">Email:</span>
 							<a href="mailto:{PERSONAL_INFO.email}">{PERSONAL_INFO.email}</a>
 						</div>
-						<div class="info-item">
-							<span class="info-label">Teléfono:</span>
-							<a href="tel:{PERSONAL_INFO.phone}">{PERSONAL_INFO.phone}</a>
-						</div>
-						<div class="info-item">
-							<span class="info-label">Ubicación:</span>
+					<div class="info-item">
+						<span class="info-label">Ubicación:</span>
 							<span>{PERSONAL_INFO.location}</span>
 						</div>
 						<div class="info-item">
@@ -106,12 +102,12 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 	.about-hero {
 		padding: 3rem 0;
 		text-align: center;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-color);
 		margin-bottom: 3rem;
 	}
 	.about-intro h1 {
 		font-size: 2.5rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.5rem;
 	}
 	.about-subtitle {
@@ -127,23 +123,23 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		margin-bottom: 4rem;
 	}
 	.about-text h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 1rem;
 	}
 	.about-text p {
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 		line-height: 1.8;
 		margin-bottom: 1.5rem;
 	}
 
 	.info-card {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.5rem;
 	}
 	.info-card h3 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 1.2rem;
 		margin-bottom: 1rem;
 		padding-bottom: 0.5rem;
@@ -156,11 +152,11 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 	}
 	.info-label {
 		font-size: 0.85rem;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin-bottom: 0.2rem;
 	}
 	.info-item a, .info-item span {
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 		font-size: 0.95rem;
 	}
 
@@ -168,11 +164,11 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		margin-bottom: 4rem;
 	}
 	.education h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 1.5rem;
 	}
 	.education-item {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.5rem;
@@ -187,7 +183,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		gap: 0.5rem;
 	}
 	.education-header h3 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 1.2rem;
 		margin: 0;
 	}
@@ -197,7 +193,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		font-size: 0.9rem;
 	}
 	.education-institution {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin: 0.5rem 0;
 	}
 	.education-status {
@@ -214,7 +210,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		margin-bottom: 4rem;
 	}
 	.certifications h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 1.5rem;
 	}
 	.cert-list {
@@ -226,7 +222,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		display: flex;
 		align-items: center;
 		gap: 0.8rem;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1rem 1.5rem;
@@ -236,7 +232,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 	}
 
 	.soft-skills h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 1.5rem;
 	}
 	.soft-skills-grid {
@@ -248,7 +244,7 @@ import { SITE_TITLE, PERSONAL_INFO, EDUCATION, CERTIFICATIONS, SOFT_SKILLS } fro
 		display: flex;
 		align-items: center;
 		gap: 0.8rem;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1rem 1.5rem;

@@ -12,7 +12,6 @@ const today = new Date();
 		<div class="footer-section">
 			<h4>Contacto</h4>
 			<p><a href="mailto:fmezavalencia@gmail.com">fmezavalencia@gmail.com</a></p>
-			<p><a href="tel:+51966196017">+51 966 196 017</a></p>
 		</div>
 		<div class="footer-section">
 			<h4>Redes</h4>
@@ -30,8 +29,8 @@ const today = new Date();
 <style>
 	footer {
 		padding: 3em 1em 2em;
-		background: linear-gradient(to bottom, rgba(var(--gray-light), 30%), #fff);
-		color: rgb(var(--gray));
+		background: linear-gradient(to bottom, rgba(var(--gray-light), 30%), var(--bg));
+		color: var(--text-secondary);
 		margin-top: 4rem;
 	}
 	.footer-content {
@@ -41,15 +40,15 @@ const today = new Date();
 		max-width: 1000px;
 		margin: 0 auto;
 		padding-bottom: 2rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-color);
 	}
 	.footer-section h3 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 1.2rem;
 		margin-bottom: 0.5rem;
 	}
 	.footer-section h4 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 1rem;
 		margin-bottom: 0.5rem;
 	}
@@ -58,7 +57,7 @@ const today = new Date();
 		font-size: 0.95rem;
 	}
 	.footer-section a {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		text-decoration: none;
 	}
 	.footer-section a:hover {
@@ -69,7 +68,7 @@ const today = new Date();
 		gap: 1rem;
 	}
 	.social-links a {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 	}
 	.social-links a:hover {
 		color: var(--accent);

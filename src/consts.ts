@@ -5,7 +5,6 @@ export const PERSONAL_INFO = {
 	name: 'Flavio Anthony Meza Valencia',
 	title: 'Desarrollador de Software',
 	email: 'fmezavalencia@gmail.com',
-	phone: '+51 966 196 017',
 	location: 'Callao, Lima - Perú',
 	linkedin: 'www.linkedin.com/in/flavio-anthony-meza-valencia-18117126b',
 	github: 'https://github.com/fmezavalencia',

@@ -525,13 +525,13 @@ Zonas
 	.hero {
 		text-align: center;
 		padding: 2rem 0 3rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-color);
 		margin-bottom: 3rem;
 	}
 	.hero-badge {
 		display: inline-block;
 		padding: 0.3rem 1rem;
-		background: rgba(59, 130, 246, 0.1);
+		background: var(--accent-bg);
 		color: var(--accent);
 		border-radius: 9999px;
 		font-size: 0.85rem;
@@ -540,7 +540,7 @@ Zonas
 	}
 	.hero h1 {
 		font-size: 3.5rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.3rem;
 		letter-spacing: -0.02em;
 	}
@@ -553,7 +553,7 @@ Zonas
 	.hero-desc {
 		max-width: 700px;
 		margin: 0 auto 2rem;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		line-height: 1.8;
 		font-size: 1.05rem;
 	}
@@ -579,7 +579,7 @@ Zonas
 		gap: 1.2rem;
 	}
 	.gallery-item {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		overflow: hidden;
@@ -603,7 +603,7 @@ Zonas
 		padding: 0.8rem 1rem;
 		font-size: 0.9rem;
 		font-weight: 600;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		text-align: center;
 	}
 
@@ -622,7 +622,7 @@ Zonas
 		gap: 1rem;
 	}
 	.stack-item {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.2rem;
@@ -642,7 +642,7 @@ Zonas
 		margin-bottom: 0.3rem;
 	}
 	.stack-item strong {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 0.95rem;
 	}
 
@@ -661,7 +661,7 @@ Zonas
 		gap: 2rem;
 	}
 	.arch-tree, .arch-table {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.5rem;
@@ -669,10 +669,10 @@ Zonas
 	.arch-tree h3, .arch-table h3 {
 		font-size: 1.2rem;
 		margin-bottom: 1rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 	}
 	.arch-tree pre {
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		padding: 1.2rem;
 		border-radius: 8px;
 		overflow-x: auto;
@@ -691,14 +691,14 @@ Zonas
 	.arch-table th {
 		text-align: left;
 		padding: 0.6rem;
-		border-bottom: 2px solid rgb(var(--gray-light));
+		border-bottom: 2px solid var(--border-color);
 		color: var(--accent);
 		font-weight: 600;
 	}
 	.arch-table td {
 		padding: 0.5rem 0.6rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		color: rgb(var(--gray-dark));
+		border-bottom: 1px solid var(--border-color);
+		color: var(--text-body);
 	}
 
 	/* Modules */
@@ -713,7 +713,7 @@ Zonas
 	.module-card {
 		display: flex;
 		gap: 1.5rem;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.5rem 2rem;
@@ -726,7 +726,7 @@ Zonas
 	.module-num {
 		font-size: 2rem;
 		font-weight: 800;
-		color: rgba(59, 130, 246, 0.15);
+		color: var(--accent-bg);
 		flex-shrink: 0;
 		width: 50px;
 		text-align: center;
@@ -738,11 +738,11 @@ Zonas
 	}
 	.module-body h3 {
 		font-size: 1.2rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.7rem;
 	}
 	.module-body p {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin-bottom: 0.8rem;
 		font-size: 0.95rem;
 	}
@@ -752,7 +752,7 @@ Zonas
 		margin: 0 0 0.8rem;
 	}
 	.module-body ul li {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		font-size: 0.95rem;
 		padding: 0.2rem 0;
 		padding-left: 1.2rem;
@@ -766,7 +766,7 @@ Zonas
 	}
 	.module-detail {
 		font-size: 0.9rem;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 	}
 	.module-routes {
 		display: flex;
@@ -778,9 +778,9 @@ Zonas
 		font-family: monospace;
 		font-size: 0.78rem;
 		padding: 0.2rem 0.6rem;
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		border-radius: 4px;
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 	}
 
 	/* Roles */
@@ -838,13 +838,13 @@ Zonas
 	}
 	.form-type {
 		padding: 0.8rem;
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		border-radius: 8px;
 		text-align: center;
 	}
 	.form-type h4 {
 		font-size: 0.95rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.2rem;
 	}
 	.form-type p {
@@ -866,7 +866,7 @@ Zonas
 		border-radius: 6px;
 		font-size: 0.9rem;
 		font-weight: 500;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 	}
 	.arrow {
 		color: var(--accent);
@@ -887,16 +887,16 @@ Zonas
 		gap: 0.8rem;
 		align-items: baseline;
 		padding: 0.6rem 1rem;
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		border-radius: 8px;
 		border-left: 3px solid var(--accent);
 	}
 	.geo-level strong {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		min-width: 100px;
 	}
 	.geo-level span {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		font-size: 0.9rem;
 	}
 
@@ -913,7 +913,7 @@ Zonas
 		border: 1px solid rgba(59, 130, 246, 0.15);
 		border-radius: 6px;
 		font-size: 0.85rem;
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 	}
 
 	/* PDF types */
@@ -925,18 +925,18 @@ Zonas
 	}
 	.pdf-type {
 		padding: 1rem;
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		border-radius: 8px;
 	}
 	.pdf-type h4 {
 		font-size: 0.95rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.3rem;
 	}
 	.pdf-type p {
 		font-size: 0.85rem;
 		margin: 0;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 	}
 
 	/* Access table */
@@ -954,7 +954,7 @@ Zonas
 	.access-table {
 		width: 100%;
 		border-collapse: collapse;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		overflow: hidden;
@@ -969,9 +969,9 @@ Zonas
 	}
 	.access-table td {
 		padding: 0.6rem 1rem;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-color);
 		font-size: 0.9rem;
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 	}
 	.access-table tbody tr:hover {
 		background: rgba(59, 130, 246, 0.03);
@@ -1000,7 +1000,7 @@ Zonas
 		gap: 1rem;
 	}
 	.feature-item {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 1.3rem;
@@ -1017,7 +1017,7 @@ Zonas
 	}
 	.feature-item p {
 		font-size: 0.9rem;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin: 0;
 	}
 
@@ -1039,7 +1039,7 @@ Zonas
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: white;
+		background: var(--bg-card);
 		border-radius: 8px;
 		box-shadow: var(--box-shadow);
 		padding: 0.8rem 1.2rem;
@@ -1052,7 +1052,7 @@ Zonas
 	}
 	.env-val {
 		font-size: 0.9rem;
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 		font-weight: 500;
 	}
 
@@ -1074,18 +1074,18 @@ Zonas
 		display: flex;
 		gap: 1rem;
 		align-items: baseline;
-		background: white;
+		background: var(--bg-card);
 		border-radius: 8px;
 		box-shadow: var(--box-shadow);
 		padding: 0.8rem 1.2rem;
 	}
 	.seeder-item strong {
 		min-width: 180px;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		font-size: 0.95rem;
 	}
 	.seeder-item span {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		font-size: 0.9rem;
 	}
 
@@ -1093,17 +1093,17 @@ Zonas
 	.sgcd-cta {
 		text-align: center;
 		padding: 3rem 2rem;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		margin-bottom: 2rem;
 	}
 	.sgcd-cta h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.5rem;
 	}
 	.sgcd-cta p {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin-bottom: 1.5rem;
 	}
 	.cta-buttons {

@@ -60,17 +60,17 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 	.projects-hero {
 		padding: 3rem 0;
 		text-align: center;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid var(--border-color);
 		margin-bottom: 3rem;
 	}
 	.projects-hero h1 {
 		font-size: 2.5rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.5rem;
 	}
 	.projects-subtitle {
 		font-size: 1.2rem;
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 	}
 
 	.projects-grid {
@@ -81,7 +81,7 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 	}
 
 	.project-card {
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 		padding: 2rem;
@@ -111,11 +111,11 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 		height: 6px;
 	}
 	.project-gallery::-webkit-scrollbar-track {
-		background: rgb(var(--gray-light));
+		background: var(--border-color);
 		border-radius: 3px;
 	}
 	.project-gallery::-webkit-scrollbar-thumb {
-		background: rgb(var(--gray));
+		background: var(--text-secondary);
 		border-radius: 3px;
 	}
 	.project-gallery img {
@@ -125,7 +125,7 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 		object-fit: cover;
 		scroll-snap-align: start;
 		flex-shrink: 0;
-		border: 1px solid rgb(var(--gray-light));
+		border: 1px solid var(--border-color);
 		transition: var(--transition);
 	}
 	.project-gallery img:hover {
@@ -140,7 +140,7 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 	}
 	.project-header h2 {
 		font-size: 1.3rem;
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin: 0;
 		flex: 1;
 	}
@@ -152,11 +152,11 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 		transition: var(--transition);
 	}
 	.project-link:hover {
-		background: rgba(59, 130, 246, 0.1);
+		background: var(--accent-bg);
 	}
 
 	.project-description {
-		color: rgb(var(--gray-dark));
+		color: var(--text-body);
 		line-height: 1.7;
 		margin-bottom: 1.5rem;
 		flex: 1;
@@ -171,16 +171,16 @@ import { SITE_TITLE, PROJECTS } from '../consts';
 	.projects-cta {
 		text-align: center;
 		padding: 3rem 2rem;
-		background: white;
+		background: var(--bg-card);
 		border-radius: var(--border-radius);
 		box-shadow: var(--box-shadow);
 	}
 	.projects-cta h2 {
-		color: rgb(var(--black));
+		color: var(--text-primary);
 		margin-bottom: 0.5rem;
 	}
 	.projects-cta p {
-		color: rgb(var(--gray));
+		color: var(--text-secondary);
 		margin-bottom: 1.5rem;
 	}
 
