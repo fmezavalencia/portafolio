@@ -75,7 +75,7 @@ export const PROJECTS = [
 		title: 'Sistema de Registro de Incidentes de Seguridad Ciudadana',
 		description: 'Aplicación web para la gestión, registro y análisis de incidentes de seguridad en la región de Chancay/Huaral/Aucallama (Perú). Permite a los operadores reportar incidentes, administrar cámaras de vigilancia, registrar ciudadanos y generar reportes estadísticos detallados con exportación a PDF.',
 		tech: ['Laravel 12', 'Vue.js 3', 'Inertia.js', 'Tailwind CSS', 'MySQL', 'Chart.js', 'Vite 6'],
-		link: '/projects/sgcd',
+		link: `${import.meta.env.BASE_URL}/projects/sgcd`,
 		images: [
 			'/images/sgcd/panel-estadisticas.png',
 			'/images/sgcd/crear-incidente-1.png',
@@ -92,7 +92,7 @@ export const PROJECTS = [
 		title: 'API - Gestor Web',
 		description: 'Sistema de gestión integral para el registro y administración de personas, ciudades, localidades, oficinas e integraciones con aplicaciones externas. Incluye autenticación dual (sesión y token), roles y permisos, exportación a Excel y auditoría completa.',
 		tech: ['Laravel 12', 'Vue.js 3', 'Inertia.js', 'Tailwind CSS', 'MySQL 8', 'Vite 6', 'Sanctum'],
-		link: '/projects/api',
+		link: `${import.meta.env.BASE_URL}/projects/api`,
 		images: [
 			'/images/api/login.png',
 			'/images/api/personas.png',

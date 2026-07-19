@@ -13,7 +13,7 @@ import { SITE_TITLE } from '../../consts';
 	<body>
 		<Header />
 		<main class="sgcd">
-			<a href="/projects" class="back-link">← Volver a Proyectos</a>
+			<a href={`${import.meta.env.BASE_URL}/projects`} class="back-link">← Volver a Proyectos</a>
 
 			<section class="hero">
 				<div class="hero-badge">Proyecto Destacado</div>
@@ -480,8 +480,8 @@ Zonas
 				<h2>¿Te interesa este proyecto?</h2>
 				<p>Puedes ver más detalles o contactarme para discutir implementaciones similares.</p>
 				<div class="cta-buttons">
-					<a href="/projects" class="btn">Ver Otros Proyectos</a>
-					<a href="/contact" class="btn btn-outline">Contactar</a>
+					<a href={`${import.meta.env.BASE_URL}/projects`} class="btn">Ver Otros Proyectos</a>
+					<a href={`${import.meta.env.BASE_URL}/contact`} class="btn btn-outline">Contactar</a>
 				</div>
 			</section>
 		</main>
