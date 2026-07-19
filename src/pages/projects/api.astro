@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -38,32 +39,32 @@ import { SITE_TITLE } from '../../consts';
 			<section class="gallery-section">
 				<h2>Galería del Sistema</h2>
 				<div class="gallery-grid">
-					<a href="/images/api/login.png" class="gallery-item glightbox" data-gallery="api" data-description="Inicio de Sesión">
-						<img src="/images/api/login.png" alt="Inicio de Sesión" loading="lazy" />
+					<a href={`${base}/images/api/login.png`} class="gallery-item glightbox" data-gallery="api" data-description="Inicio de Sesión">
+						<img src={`${base}/images/api/login.png`} alt="Inicio de Sesión" loading="lazy" />
 						<span>Inicio de Sesión</span>
 					</a>
-					<a href="/images/api/personas.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Personas">
-						<img src="/images/api/personas.png" alt="Gestión de Personas" loading="lazy" />
+					<a href={`${base}/images/api/personas.png`} class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Personas">
+						<img src={`${base}/images/api/personas.png`} alt="Gestión de Personas" loading="lazy" />
 						<span>Gestión de Personas</span>
 					</a>
-					<a href="/images/api/ciudades.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Ciudades">
-						<img src="/images/api/ciudades.png" alt="Gestión de Ciudades" loading="lazy" />
+					<a href={`${base}/images/api/ciudades.png`} class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Ciudades">
+						<img src={`${base}/images/api/ciudades.png`} alt="Gestión de Ciudades" loading="lazy" />
 						<span>Gestión de Ciudades</span>
 					</a>
-					<a href="/images/api/localidades.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Localidades">
-						<img src="/images/api/localidades.png" alt="Gestión de Localidades" loading="lazy" />
+					<a href={`${base}/images/api/localidades.png`} class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Localidades">
+						<img src={`${base}/images/api/localidades.png`} alt="Gestión de Localidades" loading="lazy" />
 						<span>Gestión de Localidades</span>
 					</a>
-					<a href="/images/api/oficinas.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Oficinas">
-						<img src="/images/api/oficinas.png" alt="Gestión de Oficinas" loading="lazy" />
+					<a href={`${base}/images/api/oficinas.png`} class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Oficinas">
+						<img src={`${base}/images/api/oficinas.png`} alt="Gestión de Oficinas" loading="lazy" />
 						<span>Gestión de Oficinas</span>
 					</a>
-					<a href="/images/api/exportar.png" class="gallery-item glightbox" data-gallery="api" data-description="Exportación de Datos">
-						<img src="/images/api/exportar.png" alt="Exportación de Datos" loading="lazy" />
+					<a href={`${base}/images/api/exportar.png`} class="gallery-item glightbox" data-gallery="api" data-description="Exportación de Datos">
+						<img src={`${base}/images/api/exportar.png`} alt="Exportación de Datos" loading="lazy" />
 						<span>Exportación de Datos</span>
 					</a>
-					<a href="/images/api/aplicaciones.png" class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Aplicaciones">
-						<img src="/images/api/aplicaciones.png" alt="Gestión de Aplicaciones" loading="lazy" />
+					<a href={`${base}/images/api/aplicaciones.png`} class="gallery-item glightbox" data-gallery="api" data-description="Gestión de Aplicaciones">
+						<img src={`${base}/images/api/aplicaciones.png`} alt="Gestión de Aplicaciones" loading="lazy" />
 						<span>Gestión de Aplicaciones</span>
 					</a>
 				</div>

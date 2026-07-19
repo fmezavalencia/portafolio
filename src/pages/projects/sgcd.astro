@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -39,40 +40,40 @@ import { SITE_TITLE } from '../../consts';
 			<section class="gallery-section">
 				<h2>Galería del Sistema</h2>
 				<div class="gallery-grid">
-					<a href="/images/sgcd/panel-estadisticas.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Panel de Estadísticas">
-						<img src="/images/sgcd/panel-estadisticas.png" alt="Panel de Estadísticas" loading="lazy" />
+					<a href={`${base}/images/sgcd/panel-estadisticas.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Panel de Estadísticas">
+						<img src={`${base}/images/sgcd/panel-estadisticas.png`} alt="Panel de Estadísticas" loading="lazy" />
 						<span>Panel de Estadísticas</span>
 					</a>
-					<a href="/images/sgcd/crear-incidente-1.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Crear Incidente">
-						<img src="/images/sgcd/crear-incidente-1.png" alt="Crear Incidente" loading="lazy" />
+					<a href={`${base}/images/sgcd/crear-incidente-1.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Crear Incidente">
+						<img src={`${base}/images/sgcd/crear-incidente-1.png`} alt="Crear Incidente" loading="lazy" />
 						<span>Crear Incidente</span>
 					</a>
-					<a href="/images/sgcd/ver-incidentes.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ver Incidentes">
-						<img src="/images/sgcd/ver-incidentes.png" alt="Ver Incidentes" loading="lazy" />
+					<a href={`${base}/images/sgcd/ver-incidentes.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Ver Incidentes">
+						<img src={`${base}/images/sgcd/ver-incidentes.png`} alt="Ver Incidentes" loading="lazy" />
 						<span>Ver Incidentes</span>
 					</a>
-					<a href="/images/sgcd/crear-incidente-2.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Formulario de Incidente">
-						<img src="/images/sgcd/crear-incidente-2.png" alt="Formulario de Incidente" loading="lazy" />
+					<a href={`${base}/images/sgcd/crear-incidente-2.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Formulario de Incidente">
+						<img src={`${base}/images/sgcd/crear-incidente-2.png`} alt="Formulario de Incidente" loading="lazy" />
 						<span>Formulario de Incidente</span>
 					</a>
-					<a href="/images/sgcd/gestion-camaras.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Cámaras">
-						<img src="/images/sgcd/gestion-camaras.png" alt="Gestión de Cámaras" loading="lazy" />
+					<a href={`${base}/images/sgcd/gestion-camaras.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Cámaras">
+						<img src={`${base}/images/sgcd/gestion-camaras.png`} alt="Gestión de Cámaras" loading="lazy" />
 						<span>Gestión de Cámaras</span>
 					</a>
-					<a href="/images/sgcd/gestion-usuarios.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Usuarios">
-						<img src="/images/sgcd/gestion-usuarios.png" alt="Gestión de Usuarios" loading="lazy" />
+					<a href={`${base}/images/sgcd/gestion-usuarios.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Gestión de Usuarios">
+						<img src={`${base}/images/sgcd/gestion-usuarios.png`} alt="Gestión de Usuarios" loading="lazy" />
 						<span>Gestión de Usuarios</span>
 					</a>
-					<a href="/images/sgcd/ubicaciones/ubicaciones-1.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones e Incidentes">
-						<img src="/images/sgcd/ubicaciones/ubicaciones-1.png" alt="Ubicaciones e Incidentes" loading="lazy" />
+					<a href={`${base}/images/sgcd/ubicaciones/ubicaciones-1.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones e Incidentes">
+						<img src={`${base}/images/sgcd/ubicaciones/ubicaciones-1.png`} alt="Ubicaciones e Incidentes" loading="lazy" />
 						<span>Ubicaciones e Incidentes</span>
 					</a>
-					<a href="/images/sgcd/ubicaciones/ubicaciones-2.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones Geográficas">
-						<img src="/images/sgcd/ubicaciones/ubicaciones-2.png" alt="Ubicaciones Geográficas" loading="lazy" />
+					<a href={`${base}/images/sgcd/ubicaciones/ubicaciones-2.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Ubicaciones Geográficas">
+						<img src={`${base}/images/sgcd/ubicaciones/ubicaciones-2.png`} alt="Ubicaciones Geográficas" loading="lazy" />
 						<span>Ubicaciones Geográficas</span>
 					</a>
-					<a href="/images/sgcd/ubicaciones/ubicaciones-3.png" class="gallery-item glightbox" data-gallery="sgcd" data-description="Mapa de Ubicaciones">
-						<img src="/images/sgcd/ubicaciones/ubicaciones-3.png" alt="Mapa de Ubicaciones" loading="lazy" />
+					<a href={`${base}/images/sgcd/ubicaciones/ubicaciones-3.png`} class="gallery-item glightbox" data-gallery="sgcd" data-description="Mapa de Ubicaciones">
+						<img src={`${base}/images/sgcd/ubicaciones/ubicaciones-3.png`} alt="Mapa de Ubicaciones" loading="lazy" />
 						<span>Mapa de Ubicaciones</span>
 					</a>
 				</div>
