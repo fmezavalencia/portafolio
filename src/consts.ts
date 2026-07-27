@@ -103,28 +103,4 @@ export const PROJECTS = [
 			`${import.meta.env.BASE_URL}/images/api/aplicaciones.png`,
 		],
 	},
-	{
-		title: 'Plataforma de Seguridad Ciudadana',
-		description: 'Sistema web para la gestión de reportes de seguridad ciudadana en la Municipalidad de Chancay. Incluye formularios automatizados, control de usuarios y dashboards de seguimiento.',
-		tech: ['PHP', 'MySQL', 'JavaScript', 'HTML5'],
-		link: '#',
-	},
-	{
-		title: 'Sistema de Gestión de Viajes',
-		description: 'Plataforma web para la gestión de operaciones internas de una agencia de viajes. Formularios dinámicos, administración de datos y herramientas de atención al cliente.',
-		tech: ['PHP', 'WordPress', 'MySQL', 'JavaScript'],
-		link: '#',
-	},
-	{
-		title: 'Aplicación Móvil con Flutter',
-		description: 'Aplicación móvil multiplataforma desarrollada con Flutter y Firebase para la gestión de datos en tiempo real.',
-		tech: ['Flutter', 'Firebase', 'Dart'],
-		link: '#',
-	},
-	{
-		title: 'Dashboard de Análisis de Datos',
-		description: 'Dashboard interactivo para visualización y análisis de datos empresariales utilizando Power BI y servicios de Azure.',
-		tech: ['Power BI', 'Microsoft Azure', 'SQL Server'],
-		link: '#',
-	},
 ];
